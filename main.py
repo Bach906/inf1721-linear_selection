@@ -1,9 +1,11 @@
 
 import math
+from random import randint
 
+#ta tudo errado, falta tirar m 
 
-# import heap stuff
-# import bubble sort
+#global var
+distr_flag = 0
 
 def bubblesort(list):
     # algorithm taken from https://www.tutorialspoint.com/python_data_structure/python_sorting_algorithms.htm
@@ -15,7 +17,6 @@ def bubblesort(list):
                 list[idx+1] = temp
     return list
 
-
 def get_median(a):
     bubblesort(a)
     index = math.ceil(len(a)/2) #round up
@@ -23,7 +24,7 @@ def get_median(a):
 
 
 
-def LinearSelection(A, k):
+def simple_LinearSelection(A, k): #visto em sala
     median_list = []
     len_5_list = []
 
@@ -41,6 +42,7 @@ def LinearSelection(A, k):
             len_5_list.clear()
 
     m = LinearSelection(median_list, math.ceil(len(median_list)/2))
+    A.remove(m)
     
     R = []
     L = []
@@ -56,21 +58,66 @@ def LinearSelection(A, k):
         return m
     elif k <= len(L):
         return LinearSelection(L, k)
-    elif k > len(L): #pode ser else
+    else: #elif k > len(L):
         return LinearSelection(R, k - len(L) - 1)
     
-    return 1
+
+def LinearSelection(A, k): # precisa funcionar com floats repetidos
+    median_list = []
+    len_5_list = []
+    global distr_flag
+    aux = 0
+
+    if len(A) <= 1:
+        return get_median(A)
+    
+    for i in A:
+        len_5_list.append(i)
+        aux += 1
+        if aux % 5 == 0 or aux == len(A):
+
+            median_list.append(get_median(len_5_list))
+            len_5_list.clear()
+
+    m = LinearSelection(median_list, math.ceil(len(median_list)/2))
+    A.remove(m)
+    
+    R = []
+    L = []
+
+    for i in A:
+        if (i < m) or (i == m and distr_flag == 0):
+            L.append(i)
+            distr_flag = 1
+        elif (i > m) or (i == m and distr_flag == 1):
+            R.append(i)
+            distr_flag = 0
+
+
+    if k == len(L) + 1:
+        return m
+    elif k <= len(L):
+        return LinearSelection(L, k)
+    else: #elif k > len(L):
+        return LinearSelection(R, k - len(L) - 1)
+    
 
 
 def main():
-    # cria vetor A de tamanho 100 contendo floats aleatorios
-    # pega um k
     A = []
-    k = 10
-   
-    for i in range(600):
-        A.append(i)
+    k = 20
+
+    # while(len(A) < 100):
+    #     i = randint(1, 100)
+    #     print(i, end = ", ")
+    #     A.append(i)
+    
+
+    
     median_of_medians = LinearSelection(A, k)
+    A.sort()
+    for i in A:
+        print(i, end = ", ")
     print(median_of_medians)
 
     return
