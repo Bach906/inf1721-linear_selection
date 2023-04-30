@@ -2,8 +2,6 @@
 import math
 from random import randint
 
-#global var
-distr_flag = 0
 
 def bubblesort(list):
     # algorithm taken from https://www.tutorialspoint.com/python_data_structure/python_sorting_algorithms.htm
@@ -61,8 +59,8 @@ def simple_LinearSelection(A, k): #visto em sala
 
 def LinearSelection(A, k): # precisa funcionar com floats repetidos
     median_list = []
+    distr_flag = 0
     len_5_list = []
-    global distr_flag
     aux = 0
 
     if len(A) <= 1:
@@ -82,6 +80,8 @@ def LinearSelection(A, k): # precisa funcionar com floats repetidos
     R = []
     L = []
 
+    # tudo certo ate aqui
+
     for i in A:
         if (i < m) or (i == m and distr_flag == 0):
             L.append(i)
@@ -89,6 +89,8 @@ def LinearSelection(A, k): # precisa funcionar com floats repetidos
         elif (i > m) or (i == m and distr_flag == 1):
             R.append(i)
             distr_flag = 0
+
+
 
     if k == len(L) + 1:
         return m
@@ -100,17 +102,21 @@ def LinearSelection(A, k): # precisa funcionar com floats repetidos
 
 def main():
     A = []
-    k = 20
+    k = 12
 
-    while(len(A) < 100):
-        i = randint(1, 100)
+    while(len(A) <= 120):
+        i = randint(1, 121)
+        # if (i in A) :continue
         A.append(i)
 
     result = LinearSelection(A, k)
 
     A.sort()
     for i in range(len(A) - 1):
-        print(A[i], end = ",")
+        if i == k - 1:
+            print("(", A[i], ")", end = ",")
+        else :
+            print(A[i], end = ",")
     
     print()
     print("k'esimo menor valor =", A[k-1], "\nresultado da funcao =", result)
