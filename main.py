@@ -65,18 +65,18 @@ def LinearSelection(A, k): # precisa funcionar com floats repetidos
     global distr_flag
     aux = 0
 
-    if len(A) <= 1:
-        return get_median(A)
+    if len(A) >1:
+        for i in A:
+            len_5_list.append(i)
+            aux += 1
+            if aux % 5 == 0 or aux == len(A):
+                median_list.append(get_median(len_5_list))
+                len_5_list.clear()
+        m = LinearSelection(median_list, math.ceil(len(median_list)/2))
+    else:
+        return A[0]
 
-    for i in A:
-        len_5_list.append(i)
-        aux += 1
-        if aux % 5 == 0 or aux == len(A):
-
-            median_list.append(get_median(len_5_list))
-            len_5_list.clear()
-
-    m = LinearSelection(median_list, math.ceil(len(median_list)/2))
+    
     A.remove(m)
 
     R = []
