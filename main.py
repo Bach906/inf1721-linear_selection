@@ -1,4 +1,5 @@
 
+from time import time
 import math
 from random import randint
 
@@ -16,45 +17,8 @@ def bubblesort(list):
 
 def get_median(a):
     bubblesort(a)
-    index = math.ceil(len(a)/2) #round up
+    index = math.floor(len(a)/2) #round up
     return a[index - 1]
-
-
-def simple_LinearSelection(A, k): #visto em sala
-    median_list = []
-    len_5_list = []
-
-    aux = 0
-
-    if len(A) <= 1:
-        return get_median(A)
-
-    for i in A:
-        len_5_list.append(i)
-        aux += 1
-        if aux % 5 == 0 or aux == len(A):
-
-            median_list.append(get_median(len_5_list))
-            len_5_list.clear()
-
-    m = simple_LinearSelection(median_list, math.ceil(len(median_list)/2))
-    A.remove(m)
-
-    R = []
-    L = []
-
-    for i in A:
-        if i < m:
-            L.append(i)
-        elif i > m:
-            R.append(i)
-
-    if k == len(L) + 1:
-        return m
-    elif k <= len(L):
-        return simple_LinearSelection(L, k)
-    else: #elif k > len(L):
-        return simple_LinearSelection(R, k - len(L) - 1)
 
 
 def LinearSelection(A, k): # precisa funcionar com floats repetidos
@@ -63,6 +27,10 @@ def LinearSelection(A, k): # precisa funcionar com floats repetidos
     len_5_list = []
     aux = 0
 
+    if k < 0 or k > len(A):
+        print("Invalid k")
+        quit()
+
     if len(A) <= 1:
         return get_median(A)
 
@@ -74,13 +42,11 @@ def LinearSelection(A, k): # precisa funcionar com floats repetidos
             median_list.append(get_median(len_5_list))
             len_5_list.clear()
 
-    m = LinearSelection(median_list, math.ceil(len(median_list)/2))
+    m = LinearSelection(median_list, math.floor(len(median_list)/2))
     A.remove(m)
 
     R = []
     L = []
-
-    # tudo certo ate aqui
 
     for i in A:
         if (i < m) or (i == m and distr_flag == 0):
@@ -90,8 +56,6 @@ def LinearSelection(A, k): # precisa funcionar com floats repetidos
             R.append(i)
             distr_flag = 0
 
-
-
     if k == len(L) + 1:
         return m
     elif k <= len(L):
@@ -100,26 +64,48 @@ def LinearSelection(A, k): # precisa funcionar com floats repetidos
         return LinearSelection(R, k - len(L) - 1)
 
 
+def SortSelection(A, k):
+    Aord = bubblesort(A)
+    return Aord[k-1]
+
+
+def run_n_time(A):
+
+    start_linear = time()
+    result_linear = LinearSelection(A, k)
+    end_linear = time()
+    total_time_linear = end_linear - start_linear
+
+    start_sort = time()
+    result_sort = SortSelection(A, k)
+    end_sort = time()
+    total_time_sort = end_sort - start_sort
+
+    f.write() #fazer
+
+    return
+
 def main():
     A = []
-    k = 12
+    k = 500
 
-    while(len(A) <= 120):
-        i = randint(1, 121)
-        # if (i in A) :continue
+    f = open("n1000.txt", "r")
+    for line in f:
+        i = int(line)
         A.append(i)
+    run_n_time()
 
-    result = LinearSelection(A, k)
 
-    A.sort()
-    for i in range(len(A) - 1):
-        if i == k - 1:
-            print("(", A[i], ")", end = ",")
-        else :
-            print(A[i], end = ",")
-    
-    print()
-    print("k'esimo menor valor =", A[k-1], "\nresultado da funcao =", result)
+
+
+    if result_linear == result_sort:
+        print("Resultado Correto!")
+    else:
+        print("Resultado Errado!")
+
+
+    print("tempo linear = ", total_time_linear)
+    print("tempo sort = ", total_time_sort)
 
     return
 
