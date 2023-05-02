@@ -22,4 +22,9 @@ def main():
 
     return
 
+def getLista(size):
+    L = []
+    for count in range(size):
+        n = randint(0,100000)
+        L.append(n)
 main()

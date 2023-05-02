@@ -1,10 +1,18 @@
 
 from time import time
 import math
+
 from random import randint
 
-result_linear = 0
-result_sort = 0
+temposLinear = []
+temposSort = []
+
+def getLista(size):
+    L = []
+    for count in range(size):
+        n = randint(0,100000)
+        L.append(n)
+    return L
 
 def bubblesort(list):
     # algorithm taken from https://www.tutorialspoint.com/python_data_structure/python_sorting_algorithms.htm
@@ -28,6 +36,7 @@ def LinearSelection(A, k): # precisa funcionar com floats repetidos
     median_list = []
     len_5_list = []
     aux = 0
+    distr_flag = 0
 
     if k < 0 or k > len(aux_lst):
         print("Invalid k")
@@ -74,63 +83,40 @@ def SortSelection(A, k):
 
 def run_n_time(A,k):
 
-
-
-    return
-
-def main():
-    A = []
-
-    f = open("n2000.txt", "r")
-    for line in f:
-        i = int(line)
-        A.append(i)
-
-
-    k = 200
-
     start_linear = time()
     result_linear = LinearSelection(A, k)
     end_linear = time()
-    total_time_linear = end_linear - start_linear
-
-
+    total_time_linear = round((end_linear - start_linear) * 1000)
+    temposLinear.append(total_time_linear)
 
     start_sort = time()
     result_sort = SortSelection(A, k)
     end_sort = time()
-    total_time_sort = end_sort - start_sort
-
-    print("linear", total_time_linear, "sort", total_time_sort)
-
-    return
-
-def main():
-    A = []
-    k = 2  # <- pode modificar para achar 'k' que quiser
-
-    f = open("n100.txt", "r")
-    for line in f:
-        i = int(line)
-        A.append(i)
-
-    res1 = LinearSelection(A,k)
-    print(f"resultado LinearSelection: {res1}")
-
+    total_time_sort = round((end_sort - start_sort) * 1000)
+    temposSort.append(total_time_sort)
     
-
-#2
-
-    
-    run_n_time(A,len(A)//2)
-
     if result_linear == result_sort:
         print("Resultado Correto!")
     else:
-        print(result_linear, result_sort)
         print("Resultado Errado!")
 
-    # run_n_time(A)
+    return
+
+
+def main():
+
+#2
+
+    for size in range(1000, 10001, 1000):
+
+        for j in range(10):    
+            A = getLista(size)
+            run_n_time(A,len(A)//2)
+        
+        # printa elementos dos vetores de tempo
+        # media geometrica dos vetores de tempo
+
+
 
     return
 
