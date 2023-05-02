@@ -22,33 +22,34 @@ def get_median(a):
 
 
 def LinearSelection(A, k): # precisa funcionar com floats repetidos
+    aux_lst = A.copy()
     median_list = []
     distr_flag = 0
     len_5_list = []
     aux = 0
 
-    if k < 0 or k > len(A):
+    if k < 0 or k > len(aux_lst):
         print("Invalid k")
         quit()
 
-    if len(A) <= 1:
-        return get_median(A)
+    if len(aux_lst) <= 1:
+        return get_median(aux_lst)
 
-    for i in A:
+    for i in aux_lst:
         len_5_list.append(i)
         aux += 1
-        if aux % 5 == 0 or aux == len(A):
+        if aux % 5 == 0 or aux == len(aux_lst):
 
             median_list.append(get_median(len_5_list))
             len_5_list.clear()
 
     m = LinearSelection(median_list, math.floor(len(median_list)/2))
-    A.remove(m)
+    aux_lst.remove(m)
 
     R = []
     L = []
 
-    for i in A:
+    for i in aux_lst:
         if (i < m) or (i == m and distr_flag == 0):
             L.append(i)
             distr_flag = 1
@@ -71,41 +72,49 @@ def SortSelection(A, k):
 
 def run_n_time(A):
 
+
+
+    return
+
+def main():
+    A = []
+
+    f = open("n2000.txt", "r")
+    for line in f:
+        i = int(line)
+        A.append(i)
+
+
+    k = 200
+
     start_linear = time()
     result_linear = LinearSelection(A, k)
     end_linear = time()
     total_time_linear = end_linear - start_linear
+
+
 
     start_sort = time()
     result_sort = SortSelection(A, k)
     end_sort = time()
     total_time_sort = end_sort - start_sort
 
-    f.write() #fazer
-
-    return
-
-def main():
-    A = []
-    k = 500
-
-    f = open("n1000.txt", "r")
-    for line in f:
-        i = int(line)
-        A.append(i)
-    run_n_time()
-
-
-
 
     if result_linear == result_sort:
         print("Resultado Correto!")
     else:
+        print(result_linear, result_sort)
         print("Resultado Errado!")
 
+    # run_n_time(A)
 
-    print("tempo linear = ", total_time_linear)
-    print("tempo sort = ", total_time_sort)
+
+
+
+
+
+    # print("tempo linear = ", total_time_linear)
+    # print("tempo sort = ", total_time_sort)
 
     return
 
