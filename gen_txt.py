@@ -1,7 +1,6 @@
 import csv
 from random import randint
 
-
 def gen_file(size):
     file_name = "n" + str(size) + ".txt"
     f = open(file_name, "w")

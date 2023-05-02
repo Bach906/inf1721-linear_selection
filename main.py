@@ -3,6 +3,8 @@ from time import time
 import math
 from random import randint
 
+result_linear = 0
+result_sort = 0
 
 def bubblesort(list):
     # algorithm taken from https://www.tutorialspoint.com/python_data_structure/python_sorting_algorithms.htm
@@ -18,13 +20,12 @@ def bubblesort(list):
 def get_median(a):
     bubblesort(a)
     index = math.floor(len(a)/2) #round up
-    return a[index - 1]
+    return a[index]
 
 
 def LinearSelection(A, k): # precisa funcionar com floats repetidos
     aux_lst = A.copy()
     median_list = []
-    distr_flag = 0
     len_5_list = []
     aux = 0
 
@@ -57,12 +58,13 @@ def LinearSelection(A, k): # precisa funcionar com floats repetidos
             R.append(i)
             distr_flag = 0
 
-    if k == len(L) + 1:
+    tamL = len(L)
+    if tamL == k - 1:
         return m
-    elif k <= len(L):
-        return LinearSelection(L, k)
-    else: #elif k > len(L):
-        return LinearSelection(R, k - len(L) - 1)
+    elif tamL > k - 1:
+        return LinearSelection(L,k)
+    else:
+        return LinearSelection(R,k - tamL - 1)
 
 
 def SortSelection(A, k):
@@ -70,7 +72,7 @@ def SortSelection(A, k):
     return Aord[k-1]
 
 
-def run_n_time(A):
+def run_n_time(A,k):
 
 
 
@@ -99,6 +101,28 @@ def main():
     end_sort = time()
     total_time_sort = end_sort - start_sort
 
+    print("linear", total_time_linear, "sort", total_time_sort)
+
+    return
+
+def main():
+    A = []
+    k = 2  # <- pode modificar para achar 'k' que quiser
+
+    f = open("n100.txt", "r")
+    for line in f:
+        i = int(line)
+        A.append(i)
+
+    res1 = LinearSelection(A,k)
+    print(f"resultado LinearSelection: {res1}")
+
+    
+
+#2
+
+    
+    run_n_time(A,len(A)//2)
 
     if result_linear == result_sort:
         print("Resultado Correto!")
@@ -107,14 +131,6 @@ def main():
         print("Resultado Errado!")
 
     # run_n_time(A)
-
-
-
-
-
-
-    # print("tempo linear = ", total_time_linear)
-    # print("tempo sort = ", total_time_sort)
 
     return
 
