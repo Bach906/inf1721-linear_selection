@@ -1,0 +1,440 @@
+===  n = 1000  ===
+- Iteracao = 1
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 46.88ms
+
+- Iteracao = 2
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 54.36ms
+
+- Iteracao = 3
+Tempo de exec. LinearSelection = 1.0ms
+Tempo de exec. SortSelect = 42.52ms
+
+- Iteracao = 4
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.68ms
+
+- Iteracao = 5
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.17ms
+
+- Iteracao = 6
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.41ms
+
+- Iteracao = 7
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.3ms
+
+- Iteracao = 8
+Tempo de exec. LinearSelection = 2.01ms
+Tempo de exec. SortSelect = 47.5ms
+
+- Iteracao = 9
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.08ms
+
+- Iteracao = 10
+Tempo de exec. LinearSelection = 8.06ms
+Tempo de exec. SortSelect = 43.14ms
+
+--- Media geometrica LinearSelection = 0.0ms
+--- Media geometrica SortSelection = 49.15ms
+
+===  n = 2000  ===
+- Iteracao = 1
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 46.88ms
+
+- Iteracao = 2
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 54.36ms
+
+- Iteracao = 3
+Tempo de exec. LinearSelection = 1.0ms
+Tempo de exec. SortSelect = 42.52ms
+
+- Iteracao = 4
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.68ms
+
+- Iteracao = 5
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.17ms
+
+- Iteracao = 6
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.41ms
+
+- Iteracao = 7
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.3ms
+
+- Iteracao = 8
+Tempo de exec. LinearSelection = 2.01ms
+Tempo de exec. SortSelect = 47.5ms
+
+- Iteracao = 9
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.08ms
+
+- Iteracao = 10
+Tempo de exec. LinearSelection = 8.06ms
+Tempo de exec. SortSelect = 43.14ms
+
+--- Media geometrica LinearSelection = 0.0ms
+--- Media geometrica SortSelection = 99.43ms
+
+===  n = 3000  ===
+- Iteracao = 1
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 46.88ms
+
+- Iteracao = 2
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 54.36ms
+
+- Iteracao = 3
+Tempo de exec. LinearSelection = 1.0ms
+Tempo de exec. SortSelect = 42.52ms
+
+- Iteracao = 4
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.68ms
+
+- Iteracao = 5
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.17ms
+
+- Iteracao = 6
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.41ms
+
+- Iteracao = 7
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.3ms
+
+- Iteracao = 8
+Tempo de exec. LinearSelection = 2.01ms
+Tempo de exec. SortSelect = 47.5ms
+
+- Iteracao = 9
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.08ms
+
+- Iteracao = 10
+Tempo de exec. LinearSelection = 8.06ms
+Tempo de exec. SortSelect = 43.14ms
+
+--- Media geometrica LinearSelection = 0.0ms
+--- Media geometrica SortSelection = 166.31ms
+
+===  n = 4000  ===
+- Iteracao = 1
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 46.88ms
+
+- Iteracao = 2
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 54.36ms
+
+- Iteracao = 3
+Tempo de exec. LinearSelection = 1.0ms
+Tempo de exec. SortSelect = 42.52ms
+
+- Iteracao = 4
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.68ms
+
+- Iteracao = 5
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.17ms
+
+- Iteracao = 6
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.41ms
+
+- Iteracao = 7
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.3ms
+
+- Iteracao = 8
+Tempo de exec. LinearSelection = 2.01ms
+Tempo de exec. SortSelect = 47.5ms
+
+- Iteracao = 9
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.08ms
+
+- Iteracao = 10
+Tempo de exec. LinearSelection = 8.06ms
+Tempo de exec. SortSelect = 43.14ms
+
+--- Media geometrica LinearSelection = 0.0ms
+--- Media geometrica SortSelection = 247.96ms
+
+===  n = 5000  ===
+- Iteracao = 1
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 46.88ms
+
+- Iteracao = 2
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 54.36ms
+
+- Iteracao = 3
+Tempo de exec. LinearSelection = 1.0ms
+Tempo de exec. SortSelect = 42.52ms
+
+- Iteracao = 4
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.68ms
+
+- Iteracao = 5
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.17ms
+
+- Iteracao = 6
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.41ms
+
+- Iteracao = 7
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.3ms
+
+- Iteracao = 8
+Tempo de exec. LinearSelection = 2.01ms
+Tempo de exec. SortSelect = 47.5ms
+
+- Iteracao = 9
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.08ms
+
+- Iteracao = 10
+Tempo de exec. LinearSelection = 8.06ms
+Tempo de exec. SortSelect = 43.14ms
+
+--- Media geometrica LinearSelection = 0.0ms
+--- Media geometrica SortSelection = 345.71ms
+
+===  n = 6000  ===
+- Iteracao = 1
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 46.88ms
+
+- Iteracao = 2
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 54.36ms
+
+- Iteracao = 3
+Tempo de exec. LinearSelection = 1.0ms
+Tempo de exec. SortSelect = 42.52ms
+
+- Iteracao = 4
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.68ms
+
+- Iteracao = 5
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.17ms
+
+- Iteracao = 6
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.41ms
+
+- Iteracao = 7
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.3ms
+
+- Iteracao = 8
+Tempo de exec. LinearSelection = 2.01ms
+Tempo de exec. SortSelect = 47.5ms
+
+- Iteracao = 9
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.08ms
+
+- Iteracao = 10
+Tempo de exec. LinearSelection = 8.06ms
+Tempo de exec. SortSelect = 43.14ms
+
+--- Media geometrica LinearSelection = 0.0ms
+--- Media geometrica SortSelection = 458.88ms
+
+===  n = 7000  ===
+- Iteracao = 1
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 46.88ms
+
+- Iteracao = 2
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 54.36ms
+
+- Iteracao = 3
+Tempo de exec. LinearSelection = 1.0ms
+Tempo de exec. SortSelect = 42.52ms
+
+- Iteracao = 4
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.68ms
+
+- Iteracao = 5
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.17ms
+
+- Iteracao = 6
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.41ms
+
+- Iteracao = 7
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.3ms
+
+- Iteracao = 8
+Tempo de exec. LinearSelection = 2.01ms
+Tempo de exec. SortSelect = 47.5ms
+
+- Iteracao = 9
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.08ms
+
+- Iteracao = 10
+Tempo de exec. LinearSelection = 8.06ms
+Tempo de exec. SortSelect = 43.14ms
+
+--- Media geometrica LinearSelection = 0.0ms
+--- Media geometrica SortSelection = 587.45ms
+
+===  n = 8000  ===
+- Iteracao = 1
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 46.88ms
+
+- Iteracao = 2
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 54.36ms
+
+- Iteracao = 3
+Tempo de exec. LinearSelection = 1.0ms
+Tempo de exec. SortSelect = 42.52ms
+
+- Iteracao = 4
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.68ms
+
+- Iteracao = 5
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.17ms
+
+- Iteracao = 6
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.41ms
+
+- Iteracao = 7
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.3ms
+
+- Iteracao = 8
+Tempo de exec. LinearSelection = 2.01ms
+Tempo de exec. SortSelect = 47.5ms
+
+- Iteracao = 9
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.08ms
+
+- Iteracao = 10
+Tempo de exec. LinearSelection = 8.06ms
+Tempo de exec. SortSelect = 43.14ms
+
+--- Media geometrica LinearSelection = 0.0ms
+--- Media geometrica SortSelection = 731.2ms
+
+===  n = 9000  ===
+- Iteracao = 1
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 46.88ms
+
+- Iteracao = 2
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 54.36ms
+
+- Iteracao = 3
+Tempo de exec. LinearSelection = 1.0ms
+Tempo de exec. SortSelect = 42.52ms
+
+- Iteracao = 4
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.68ms
+
+- Iteracao = 5
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.17ms
+
+- Iteracao = 6
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.41ms
+
+- Iteracao = 7
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.3ms
+
+- Iteracao = 8
+Tempo de exec. LinearSelection = 2.01ms
+Tempo de exec. SortSelect = 47.5ms
+
+- Iteracao = 9
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.08ms
+
+- Iteracao = 10
+Tempo de exec. LinearSelection = 8.06ms
+Tempo de exec. SortSelect = 43.14ms
+
+--- Media geometrica LinearSelection = 0.0ms
+--- Media geometrica SortSelection = 890.41ms
+
+===  n = 10000  ===
+- Iteracao = 1
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 46.88ms
+
+- Iteracao = 2
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 54.36ms
+
+- Iteracao = 3
+Tempo de exec. LinearSelection = 1.0ms
+Tempo de exec. SortSelect = 42.52ms
+
+- Iteracao = 4
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.68ms
+
+- Iteracao = 5
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.17ms
+
+- Iteracao = 6
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.41ms
+
+- Iteracao = 7
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 52.3ms
+
+- Iteracao = 8
+Tempo de exec. LinearSelection = 2.01ms
+Tempo de exec. SortSelect = 47.5ms
+
+- Iteracao = 9
+Tempo de exec. LinearSelection = 0.0ms
+Tempo de exec. SortSelect = 51.08ms
+
+- Iteracao = 10
+Tempo de exec. LinearSelection = 8.06ms
+Tempo de exec. SortSelect = 43.14ms
+
+--- Media geometrica LinearSelection = 0.0ms
+--- Media geometrica SortSelection = 1064.46ms
+

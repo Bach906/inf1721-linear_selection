@@ -1,11 +1,33 @@
 
 from time import time
 import math
-
 from random import randint
+
+
+will_plot = True
+try:
+    import matplotlib.pyplot as plt
+except ModuleNotFoundError:
+    while(1):
+        print("ERROR: Precisa instalar modulo pra plotar: pip install matplotlib")
+        i = input("Continuar sem plotar? [y/n]")
+        if i == "n":
+            quit()
+        elif i == "y":
+            will_plot = False
+            break
+
 
 temposLinear = []
 temposSort = []
+
+
+def geo_mean(lst):
+    total_mult = 1
+    for i in lst:
+        total_mult *= i
+    return total_mult ** (1/len(lst))
+
 
 def getLista(size):
     L = []
@@ -13,6 +35,7 @@ def getLista(size):
         n = randint(0,100000)
         L.append(n)
     return L
+
 
 def bubblesort(list):
     # algorithm taken from https://www.tutorialspoint.com/python_data_structure/python_sorting_algorithms.htm
@@ -27,7 +50,7 @@ def bubblesort(list):
 
 def get_median(a):
     bubblesort(a)
-    index = math.floor(len(a)/2) #round up
+    index = len(a)//2
     return a[index]
 
 
@@ -53,7 +76,7 @@ def LinearSelection(A, k): # precisa funcionar com floats repetidos
             median_list.append(get_median(len_5_list))
             len_5_list.clear()
 
-    m = LinearSelection(median_list, math.floor(len(median_list)/2))
+    m = LinearSelection(median_list, len(median_list)//2)
     aux_lst.remove(m)
 
     R = []
@@ -86,37 +109,76 @@ def run_n_time(A,k):
     start_linear = time()
     result_linear = LinearSelection(A, k)
     end_linear = time()
-    total_time_linear = round((end_linear - start_linear) * 1000)
+    total_time_linear = round((end_linear - start_linear) * 1000, 2)
     temposLinear.append(total_time_linear)
 
     start_sort = time()
     result_sort = SortSelection(A, k)
     end_sort = time()
-    total_time_sort = round((end_sort - start_sort) * 1000)
+    total_time_sort = round((end_sort - start_sort) * 1000, 2)
     temposSort.append(total_time_sort)
     
-    if result_linear == result_sort:
-        print("Resultado Correto!")
-    else:
+    if result_linear != result_sort:
         print("Resultado Errado!")
+        print("Error: n =", len(A))
+        quit()
 
     return
 
 
 def main():
 
-#2
+    all_linear_means = []
+    all_sort_means = []
+
+    f = open("relatorio.txt", "w")
 
     for size in range(1000, 10001, 1000):
+        s = "===  n = " + str(size) + "  ===\n"
+        f.write(s)
 
-        for j in range(10):    
+        for j in range(10):
+
+            s = "- Iteracao = " + str(j + 1) + "\n"
+            f.write(s)
+
             A = getLista(size)
             run_n_time(A,len(A)//2)
+            
+            s = "Tempo de exec. LinearSelection = " + str(temposLinear[j]) + "ms\n" + "Tempo de exec. SortSelect = " + str(temposSort[j]) + "ms\n\n"
+            f.write(s)
         
-        # printa elementos dos vetores de tempo
-        # media geometrica dos vetores de tempo
+        g_mean_linear = round(geo_mean(temposLinear), 2)
+        g_mean_sort = round(geo_mean(temposSort), 2)
+
+        all_linear_means.append(g_mean_linear)
+        all_sort_means.append(g_mean_sort)
+
+        s = "--- Media geometrica LinearSelection = " + str(g_mean_linear) + "ms\n" + "--- Media geometrica SortSelection = " + str(g_mean_sort) + "ms\n\n"
+        f.write(s)
+
+    #plot all_mean_lst
+    if (will_plot == True):
+        i = [1000,2000,3000,4000,5000,6000,7000,8000,9000,10000]
 
 
+        plt.subplot(1, 2, 1)
+        plt.plot(i, all_linear_means, color = "blue", marker = 'o')
+        plt.ylabel("Tempo em ms")
+        plt.xlabel("Tamanho do vetor")
+        plt.title("Media de tempos\nLinearSelection")
+
+
+        plt.subplot(1, 2, 2)
+        plt.plot(i, all_sort_means, color = "red", marker = 'o')
+        plt.xlabel("Tamanho do vetor")
+        plt.title("Media de tempos\nSortSelection")
+
+        plt.show()
+        
+    
+
+    f.close()
 
     return
 
