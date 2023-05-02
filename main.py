@@ -139,7 +139,7 @@ def main():
 
         for j in range(10):
 
-            s = "- Iteracao = " + str(j + 1) + "\n"
+            s = "- Instancia = " + str(j + 1) + "\n"
             f.write(s)
 
             A = getLista(size)
@@ -147,7 +147,7 @@ def main():
             
             s = "Tempo de exec. LinearSelection = " + str(temposLinear[j]) + "ms\n" + "Tempo de exec. SortSelect = " + str(temposSort[j]) + "ms\n\n"
             f.write(s)
-        
+
         g_mean_linear = round(geo_mean(temposLinear), 2)
         g_mean_sort = round(geo_mean(temposSort), 2)
 
@@ -157,26 +157,65 @@ def main():
         s = "--- Media geometrica LinearSelection = " + str(g_mean_linear) + "ms\n" + "--- Media geometrica SortSelection = " + str(g_mean_sort) + "ms\n\n"
         f.write(s)
 
+        temposSort.clear()
+        temposLinear.clear()
+    f.write("\n=======================================================================\n")
+    f.write("Todas medias geometricas das execucoes da funcao LinearSelection: \n")
+    for i in range(10):
+        s = "n" + str((i+1)*1000) + " = " + str(all_linear_means[i]) + "\n"
+        f.write(s)
+
+    f.write("\n=======================================================================\n")
+    f.write("Todas medias geometricas das execucoes da funcao SortSelection: \n")
+    for i in range(10):
+        s = "n" + str((i+1)*1000) + " = " + str(all_sort_means[i]) + "\n"
+        f.write(s)
+
     #plot all_mean_lst
     if (will_plot == True):
         i = [1000,2000,3000,4000,5000,6000,7000,8000,9000,10000]
 
+        plt.subplots(1, 3, figsize = (12, 5))
+        
+        plt.subplot(1, 3, 1).set_ylim(0,25)
+        plt.subplot(1, 3, 1).set_box_aspect(1)
 
-        plt.subplot(1, 2, 1)
         plt.plot(i, all_linear_means, color = "blue", marker = 'o')
         plt.ylabel("Tempo em ms")
         plt.xlabel("Tamanho do vetor")
-        plt.title("Media de tempos\nLinearSelection")
+        plt.title("Media de tempos LinearSelection")
 
-
-        plt.subplot(1, 2, 2)
+        plt.subplot(1, 3, 2).set_ylim(0, 7500)
+        plt.subplot(1, 3, 2).set_box_aspect(1)
         plt.plot(i, all_sort_means, color = "red", marker = 'o')
         plt.xlabel("Tamanho do vetor")
-        plt.title("Media de tempos\nSortSelection")
+        plt.ylabel("Tempo em ms")
+        plt.title("Media de tempos SortSelection")
+        
+        plt.subplot(1, 3, 3).set_ylim(0, 7500)
+        plt.subplot(1, 3, 3).set_box_aspect(1)
+        plt.plot(i, all_sort_means, color = "red", marker = 'o')
+        plt.plot(i, all_linear_means, color = "blue", marker = 'o')
+        plt.xlabel("Tamanho do vetor")
+        plt.ylabel("Tempo em ms")
+        plt.title("Medias Sobrepostas")
+
+        # fig, ax1 = plt.subplots()
+
+        # ax1.set_xlabel('tamanho vetor')
+        # ax1.set_ylabel('tempo em ms', color="blue")
+        # ax1.plot(i, all_linear_means, color = "blue", marker = 'o')
+        # ax1.tick_params(axis='y', labelcolor="blue")
+
+        # ax2 = ax1.twinx()
+        # ax2.set_ylabel('tempo em ms', color="red") 
+        # ax2.plot(i, all_sort_means, color = "red", marker = 'o')
+        # ax2.tick_params(axis='y', labelcolor="red")
+
+        # fig.tight_layout()
 
         plt.show()
         
-    
 
     f.close()
 
