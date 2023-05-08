@@ -141,13 +141,14 @@ def main():
 
             s = "- Instancia = " + str(j + 1) + "\n"
             f.write(s)
+            print(s)
 
             A = getLista(size)
             run_n_time(A,len(A)//2)
             
             s = "Tempo de exec. LinearSelection = " + str(temposLinear[j]) + "ms\n" + "Tempo de exec. SortSelect = " + str(temposSort[j]) + "ms\n\n"
             f.write(s)
-
+            print(s)
         g_mean_linear = round(geo_mean(temposLinear), 2)
         g_mean_sort = round(geo_mean(temposSort), 2)
 
@@ -156,6 +157,7 @@ def main():
 
         s = "--- Media geometrica LinearSelection = " + str(g_mean_linear) + "ms\n" + "--- Media geometrica SortSelection = " + str(g_mean_sort) + "ms\n\n"
         f.write(s)
+        print(s)
 
         temposSort.clear()
         temposLinear.clear()
@@ -177,7 +179,7 @@ def main():
 
         plt.subplots(1, 3, figsize = (12, 5))
         
-        plt.subplot(1, 3, 1).set_ylim(0,25)
+        
         plt.subplot(1, 3, 1).set_box_aspect(1)
 
         plt.plot(i, all_linear_means, color = "blue", marker = 'o')
@@ -185,14 +187,13 @@ def main():
         plt.xlabel("Tamanho do vetor")
         plt.title("Media de tempos LinearSelection")
 
-        plt.subplot(1, 3, 2).set_ylim(0, 7500)
         plt.subplot(1, 3, 2).set_box_aspect(1)
         plt.plot(i, all_sort_means, color = "red", marker = 'o')
         plt.xlabel("Tamanho do vetor")
         plt.ylabel("Tempo em ms")
         plt.title("Media de tempos SortSelection")
         
-        plt.subplot(1, 3, 3).set_ylim(0, 7500)
+        
         plt.subplot(1, 3, 3).set_box_aspect(1)
         plt.plot(i, all_sort_means, color = "red", marker = 'o')
         plt.plot(i, all_linear_means, color = "blue", marker = 'o')
@@ -200,19 +201,6 @@ def main():
         plt.ylabel("Tempo em ms")
         plt.title("Medias Sobrepostas")
 
-        # fig, ax1 = plt.subplots()
-
-        # ax1.set_xlabel('tamanho vetor')
-        # ax1.set_ylabel('tempo em ms', color="blue")
-        # ax1.plot(i, all_linear_means, color = "blue", marker = 'o')
-        # ax1.tick_params(axis='y', labelcolor="blue")
-
-        # ax2 = ax1.twinx()
-        # ax2.set_ylabel('tempo em ms', color="red") 
-        # ax2.plot(i, all_sort_means, color = "red", marker = 'o')
-        # ax2.tick_params(axis='y', labelcolor="red")
-
-        # fig.tight_layout()
 
         plt.show()
         
